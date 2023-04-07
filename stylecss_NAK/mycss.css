@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#top_div {
+    height: 150px;
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+#lef_div {
+    height: 500px;
+    width: 20%;
+    background-color: aquamarine;
+    float: left;
+}
+
+#center_div {
+    height: 500px;
+    width: 60%;
+    background-color: bisque;
+    float: left;
+}
+
+#right_div {
+    height: 500px;
+    width: 20%;
+    background-color: burlywood;
+    float: left;
+}
+
+#bottom_div {
+    height: 100px;
+    width: 100%;
+    background-color: yellow;
+    clear: both;
+}
+
+/* exjs.php */
+
+p {
+    color: red;
+}
+
+.cls01 {
+    color: blueviolet;
+}
+
+#id01 {
+    color: yellowgreen;
+}
+
+/* menu */
+.cateOrder {
+    font-weight: bold;
+}
+
+.itemOrder {
+    font-style: italic;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* slide image */
+#DivSlideimage {
+    width: 80%;
+    margin: auto;
+}
+
+#DivView {
+    width: 700px;
+    height: 500px;
+    border: solid;
+}
+
+#DivList {
+    width: 700px;
+    height: 100px;
+    border: solid;
+}
+
+#imgView {
+    width: 600px;
+}
+
+.imgCls {
+    width: 90px;
+}
+
+.imgCls:hover {
+    width: 95px;
+}
+
+/* jq ajax */
+#content {
+    width: 84%;
+    height: auto;
+    border: solid;
+}
+
+#video {
+    width: 100%;
+    height: auto;
+    border: solid;
+}
+
+#getContent {
+    width: 100%;
+    height: auto;
+}
+
+.linkmenu:hover {
+    cursor: pointer;
+}
+
+.iconimg {
+    height: 20px;
+}
