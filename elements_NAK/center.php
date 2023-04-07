@@ -17,6 +17,9 @@
             case 'userview':
                 require './elements_NAK/mUser/userView.php';
                 break;
+            case 'updateuser':
+                require './elements_NAK/mUser/userUpdate.php';
+                break;
         }
     }
     else {

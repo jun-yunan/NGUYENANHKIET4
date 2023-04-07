@@ -78,9 +78,9 @@ class userCls extends database {
         return $update->rowCount();
     }
 
-    public function UserSetActive($iduser, $ability) {
-        $update = $this->connect->prepare("update user set ability=? where iduser=?");
-        $update->execute(array($ability, $iduser));
+    public function UserSetActive($iduser, $abtility) {
+        $update = $this->connect->prepare("update user set abtility=? where iduser=?");
+        $update->execute(array($abtility, $iduser));
 
         return $update->rowCount();
     }

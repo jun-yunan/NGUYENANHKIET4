@@ -108,11 +108,15 @@ require './elements_NAK/mod/userCls.php'
                             <?php
                             if ($v->abtility == 0) {
                             ?>
-                                <img class="iconimg" src="./img_NAK/clock.png" />
+                                <a href="./elements_NAK/mUser/userAct.php?reqact=setlock&iduser=<?php echo $v->iduser;?> &abtility=<?php echo $v->abtility;?>">
+                                    <img class="iconimg" src="./img_NAK/clock.png" />
+                                </a>
                             <?php
                             } else {
                             ?>
+                            <a href="./elements_NAK/mUser/userAct.php?reqact=setlock&iduser=<?php echo $v->iduser;?> &abtility=<?php echo $v->abtility;?>">
                                 <img class="iconimg" src="./img_NAK/unclock.png" />
+                            </a>
                             <?php
                             }
                             ?>
@@ -120,8 +124,17 @@ require './elements_NAK/mod/userCls.php'
                         <!-- <td><?php //echo $v->abtility; ?></td> -->
                         
                         <td>
-                            <img class="iconimg" src="./img_NAK/delete.png" alt="">
-                            <img class="iconimg" src="./img_NAK/update.png" alt="">
+                            <a href="./elements_NAK/mUser/userAct.php?reqact=deleteuser&iduser=<?php echo $v->iduser;?>">
+                                <img class="iconimg" src="./img_NAK/delete1.png" alt="">
+                            </a>
+                            
+                            <!-- <a href="index.php?req=updateuser&iduser=<?php //echo $v->iduser;?>">
+                                <img class="iconimg" src="./img_NAK/update1.png" alt="">
+                            </a> -->
+
+                            <temps class="btnupdate" value="<?php echo $v->iduser;?>">
+                                <img class="iconimg" src="./img_NAK/update1.png" alt="">
+                            </temps>
                         </td>
                     </tr>
                 <?php

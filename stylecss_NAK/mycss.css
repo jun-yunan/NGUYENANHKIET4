@@ -126,3 +126,8 @@ a {
 .iconimg {
     height: 20px;
 }
+
+/* btn update */
+.btnupdate:hover {
+    cursor: pointer;
+}

@@ -112,6 +112,11 @@
                 }
                 return true
             })
+            // btn update
+            $("temps").click(function() {
+                var iduser = $(this).attr("value");
+                $("#right_inner").load("./elements_NAK/mUser/userUpdate.php?iduser="+iduser);
+            })
 
         })
     </script>
@@ -137,7 +142,9 @@
     </div>
 
     <div id="right_div">
-
+        <?php 
+            require './elements_NAK/right.php';
+        ?>
     </div>
 
     <div id="bottom_div">
