@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../mod/userCls.php';
 if (isset($_REQUEST['reqact'])) {
     $requestAction = $_REQUEST['reqact'];
@@ -72,7 +73,46 @@ if (isset($_REQUEST['reqact'])) {
             else {
                 header('location:../../index.php?req=userview&result=notok');
             }
-        
+            break;
+
+        case 'checklogin':
+            echo "fđfsfds";
+            $username = $_REQUEST['username'];
+            $password = $_REQUEST['password'];
+
+            $user = new userCls();
+
+            // $rs = $user->UserCheckLogin($username, $password);
+            $rs = $user->UserCheckLogin($username, $password);
+
+            if ($rs) {
+                if ($username == 'admin') {
+                    $_SESSION['ADMIN'] = $username;
+                }
+                else {
+                    $_SESSION['USER'] = $username;
+                }
+                header('location:../../index.php?req=userview&result=ok');
+            }
+            else {
+                header('location:../../index.php?req=userview&result=notok');
+            }
+            break;
+
+        case 'userlogout':
+            $timelogin = date('h:i - d/m/Y');
+            if (isset($_SESSION['USER'])) {
+                $namelogin = $_SESSION['USER'];
+            }
+            if (isset($_SESSION['ADMIN'])) {
+                $namelogin = $_SESSION['ADMIN'];
+            }
+
+            setcookie($namelogin, $timelogin, time() + (86400 * 30), "/");
+
+            session_destroy();
+            header('location:../../index.php?');
+            break;
         default:
             header('location:../../index.php?req=userview');
             break;

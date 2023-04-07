@@ -17,7 +17,7 @@ class userCls extends database {
     }
 
     public function UserCheckLogin($username, $password) {
-        $select = $this->connect->prepare("select * from user "."where username = ? and password = ? and active=1");
+        $select = $this->connect->prepare("select * from user " . "where username = ? and password = ? and abtility=1");
         $select->setFetchMode(PDO::FETCH_OBJ);
         $select->execute(array($username, $password));
 

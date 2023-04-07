@@ -131,3 +131,30 @@ a {
 .btnupdate:hover {
     cursor: pointer;
 }
+
+/* login */
+
+#loginBody {
+    border-left: 1px double lightsteelblue;
+    border-top: 1px double lightsteelblue;
+    border-right: 1px double lightsteelblue;
+    border-bottom: 1px double lightsteelblue;
+
+    width: 300px;
+    height: 150px;
+    margin: auto auto;
+}
+
+/* button logout */
+#signoutbutton {
+    position: fixed;
+    width: 50px;
+    z-index: 2;
+    top: 10px;
+    right: 10px;
+    opacity: 0.75;
+}
+
+#signoutbutton .iconbutton {
+    width: 50px;
+}
