@@ -106,35 +106,75 @@ require './elements_NAK/mod/userCls.php'
                         <td><?php echo $v->ngaydangki; ?></td>
                         <td align="center">
                             <?php
-                            if ($v->abtility == 0) {
-                            ?>
-                                <a href="./elements_NAK/mUser/userAct.php?reqact=setlock&iduser=<?php echo $v->iduser;?> &abtility=<?php echo $v->abtility;?>">
-                                    <img class="iconimg" src="./img_NAK/clock.png" />
-                                </a>
-                            <?php
-                            } else {
-                            ?>
-                            <a href="./elements_NAK/mUser/userAct.php?reqact=setlock&iduser=<?php echo $v->iduser;?> &abtility=<?php echo $v->abtility;?>">
-                                <img class="iconimg" src="./img_NAK/unclock.png" />
-                            </a>
-                            <?php
+                            if (isset($_SESSION['ADMIN'])) {
+                                if ($v->abtility == 0) {
+                                ?>
+                                    <a href="./elements_NAK/mUser/userAct.php?reqact=setlock&iduser=<?php echo $v->iduser;?> &abtility=<?php echo $v->abtility;?>">
+                                        <img class="iconimg" src="./img_NAK/clock.png" />
+                                    </a>
+                                <?php
+                                } 
+                                else {
+                                ?>
+                                    <a href="./elements_NAK/mUser/userAct.php?reqact=setlock&iduser=<?php echo $v->iduser;?> &abtility=<?php echo $v->abtility;?>">
+                                        <img class="iconimg" src="./img_NAK/unclock.png" />
+                                    </a>
+                                <?php
+                                }
+                            }
+                            else {
+                                if ($v->abtility == 0) {
+                                    ?>
+                                        <img class="iconimg" src="./img_NAK/clock.png" />
+                                    <?php
+                                } 
+                                else {
+                                    ?>
+                                        <img class="iconimg" src="./img_NAK/unclock.png" />
+                                    <?php
+                                }
                             }
                             ?>
                         </td>
                         <!-- <td><?php //echo $v->abtility; ?></td> -->
                         
                         <td>
-                            <a href="./elements_NAK/mUser/userAct.php?reqact=deleteuser&iduser=<?php echo $v->iduser;?>">
-                                <img class="iconimg" src="./img_NAK/delete1.png" alt="">
-                            </a>
+                            <?php
+                                if (isset($_SESSION['ADMIN'])) {
+                                ?>
+                                    <a href="./elements_NAK/mUser/userAct.php?reqact=deleteuser&iduser=<?php echo $v->iduser;?>">
+                                        <img class="iconimg" src="./img_NAK/delete1.png" alt="">
+                                    </a>
+                                <?php
+                                }
+                                else {
+                                    ?>
+                                        <img class="iconimg" src="./img_NAK/delete1.png" alt="">
+                                    <?php
+                                }
+                                ?>
                             
                             <!-- <a href="index.php?req=updateuser&iduser=<?php //echo $v->iduser;?>">
                                 <img class="iconimg" src="./img_NAK/update1.png" alt="">
                             </a> -->
-
-                            <temps class="btnupdate" value="<?php echo $v->iduser;?>">
+                            <?php
+                            if (isset($_SESSION['USER']) and $v->username == 'admin') {
+                            ?>
+                                <temps class="btnupdate" value="<?php echo $v->iduser;?>">
+                                    <img class="iconimg" src="./img_NAK/update1.png" alt="">
+                                </temps>
+                                <!-- <img class="iconimg" src="./img_NAK/update1.png" alt=""> -->
+                            <?php
+                            }
+                            else {
+                            ?>
                                 <img class="iconimg" src="./img_NAK/update1.png" alt="">
-                            </temps>
+                                <!-- <temps class="btnupdate" value="<?php echo $v->iduser;?>">
+                                    <img class="iconimg" src="./img_NAK/update1.png" alt="">
+                                </temps> -->
+                            <?php
+                            }
+                            ?>
                         </td>
                     </tr>
                 <?php
