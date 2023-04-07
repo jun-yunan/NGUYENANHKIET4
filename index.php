@@ -70,7 +70,7 @@
             // form 
             $('#formreg').submit(function() {
                 var username = $("input[name*='username']").val()
-                if (username.length === 0 || username.length < 6) {
+                if (username.length === 0 || username.length < 2) {
                     $("input[name*='username']").focus()
                     $("#noteForm").html("Username chưa hợp lệ!")
                     return false;

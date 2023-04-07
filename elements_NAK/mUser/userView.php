@@ -20,24 +20,24 @@
                 <td>Giới tính:</td>
                 <td>
                     Nam<input type="radio" name="gioitinh" value="1" checked="true">
-                    Nữ<input type="radio" name="gioitinh" value="0"/>
-                </td> 
+                    Nữ<input type="radio" name="gioitinh" value="0" />
+                </td>
             </tr>
             <tr>
                 <td>Ngày sinh:</td>
-                <td><input type="date" name="ngaysinh"/></td>
+                <td><input type="date" name="ngaysinh" /></td>
             </tr>
             <tr>
                 <td>Địa chỉ:</td>
-                <td><input type="text" name="diachi"/></td>
+                <td><input type="text" name="diachi" /></td>
             </tr>
             <tr>
                 <td>Điện thoại:</td>
-                <td><input type="tel" name="dienthoai"/></td>
+                <td><input type="tel" name="dienthoai" /></td>
             </tr>
             <tr>
-                <td><input type="submit" id="btnsubmit" value="Tạo mới"/></td>
-                <td><input type="reset" value="Làm lại"/><b id="noteForm"></b></td>
+                <td><input type="submit" id="btnsubmit" value="Tạo mới" /></td>
+                <td><input type="reset" value="Làm lại" /><b id="noteForm"></b></td>
             </tr>
         </table>
     </form>
@@ -55,13 +55,13 @@ require './elements_NAK/mod/userCls.php'
     $list = $user->UserGetAll();
     // $length = count($list_user)
     ?>
-    <p>Trong bảng có <b><?php echo count($list);?></b></p>Tài khoản<br/>
-    <?php 
-        if (count($list) > 0) {
+    <p>Trong bảng có <b><?php echo count($list); ?></b></p>Tài khoản<br />
+    <?php
+    if (count($list) > 0) {
         // foreach ($list as $v) {
         //     echo $v->hoten . "<br/>";
     ?>
-    <table border="1">
+        <table border="1">
             <thead>
                 <tr>
                     <th>id</th>
@@ -79,57 +79,57 @@ require './elements_NAK/mod/userCls.php'
             </thead>
             <tbody>
                 <?php
-                foreach($list as $v) {
+                foreach ($list as $v) {
                 ?>
-                <tr>
-                    <td><?php echo $v->iduser;?></td>
-                    <td><?php echo $v->username;?></td>
-                    <td><?php echo $v->password;?></td>
-                    <td><?php echo $v->hoten;?></td>
-                    <td align="center">
-                        <?php
-                        if ($v->gioitinh == 0) {
-                            ?>
-                            <img class="iconimg" src="./img_NAK/girl.png"/>
+                    <tr>
+                        <td><?php echo $v->iduser; ?></td>
+                        <td><?php echo $v->username; ?></td>
+                        <td><?php echo $v->password; ?></td>
+                        <td><?php echo $v->hoten; ?></td>
+                        <td align="center">
                             <?php
-                        } else {
+                            if ($v->gioitinh == 0) {
                             ?>
-                            <img class="iconimg" src="./img_NAK/boy.png"/>
+                                <img class="iconimg" src="./img_NAK/girl.png" />
                             <?php
-                        }
-                        ?>
-                    </td>
-                    <td><?php echo $v->gioitinh;?></td>
-                    <td><?php echo $v->ngaysinh;?></td>
-                    <td><?php echo $v->diachi;?></td>
-                    <td><?php echo $v->dienthoai;?></td>
-                    <td align="center">
-                        <?php
-                        if ($v->abtility == 0) {
+                            } else {
                             ?>
-                            <img class="iconimg" src="./img_NAK/clock.png"/>
+                                <img class="iconimg" src="./img_NAK/boy.png" />
                             <?php
-                        }
-                        else {
+                            }
                             ?>
-                            <img class="iconimg" src="./img_NAK/unclock.png"/>
+                        </td>
+                        <!-- <td><?php //echo $v->gioitinh; ?></td> -->
+                        <td><?php echo $v->ngaysinh; ?></td>
+                        <td><?php echo $v->diachi; ?></td>
+                        <td><?php echo $v->dienthoai; ?></td>
+                        <td><?php echo $v->ngaydangki; ?></td>
+                        <td align="center">
                             <?php
-                        }
-                        ?>
-                    </td>
-                    <td>
-                        <img class="iconimg" src="./img_NAK/delete.png" alt="">
-                        <img class="iconimg" src="./img_NAK/update.png" alt="">
-                    </td>
-                    <td><?php echo $v->ngaydangki;?></td>
-                    <td><?php echo $v->abtility;?></td>
-                </tr>
+                            if ($v->abtility == 0) {
+                            ?>
+                                <img class="iconimg" src="./img_NAK/clock.png" />
+                            <?php
+                            } else {
+                            ?>
+                                <img class="iconimg" src="./img_NAK/unclock.png" />
+                            <?php
+                            }
+                            ?>
+                        </td>
+                        <!-- <td><?php //echo $v->abtility; ?></td> -->
+                        
+                        <td>
+                            <img class="iconimg" src="./img_NAK/delete.png" alt="">
+                            <img class="iconimg" src="./img_NAK/update.png" alt="">
+                        </td>
+                    </tr>
                 <?php
                 }
                 ?>
             </tbody>
-    </table>
-        <?php
-        }
-        ?>
+        </table>
+    <?php
+    }
+    ?>
 </div>

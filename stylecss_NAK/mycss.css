@@ -27,7 +27,7 @@
 #right_div {
     height: 500px;
     width: 20%;
-    background-color: burlywood;
+    /* background-color: burlywood; */
     float: left;
 }
 
