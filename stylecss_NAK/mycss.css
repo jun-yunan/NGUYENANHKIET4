@@ -158,3 +158,9 @@ a {
 #signoutbutton .iconbutton {
     width: 50px;
 }
+
+/* product */
+.imgtable {
+    width: 400px;
+    height: 290px;
+}

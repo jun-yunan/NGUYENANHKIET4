@@ -45,6 +45,7 @@
 <div class="itemOrder">
     <ul>
         <li><a href="index.php?req=userview">Tài khoản</a></li>
+        <li><a href="index.php?req=loaihangView">Loại hàng</a></li>
     </ul>
 </div>
 

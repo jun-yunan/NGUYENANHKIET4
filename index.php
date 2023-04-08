@@ -14,6 +14,7 @@ if (!isset($_SESSION['USER']) and !isset($_SESSION['ADMIN'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./stylecss_NAK/mycss.css">
         <script src="./js_NAK/jquery-3.6.4.min.js"></script>
+        <script src="./js_NAK/jscript.js"></script>
         <title>Đây là website của giáo viên hướng dẫn</title>
         <script>
             $(document).ready(function() {
@@ -126,6 +127,11 @@ if (!isset($_SESSION['USER']) and !isset($_SESSION['ADMIN'])) {
                     $("#right_inner").load("./elements_NAK/mUser/userUpdate.php?iduser=" + iduser);
                 })
 
+                //btn update loaihang
+                $("temploaihang").click(function() {
+                    var idloaihang = $(this).attr("value");
+                    $("#right_inner").load("./elements_NAK/mLoaihang/loaihangUpdate.php?idloaihang="+idloaihang);
+                })
             })
         </script>
     </head>

@@ -20,6 +20,9 @@
             case 'updateuser':
                 require './elements_NAK/mUser/userUpdate.php';
                 break;
+            case 'loaihangView':
+                require './elements_NAK/mLoaihang/loaihangView.php';
+                break;
         }
     }
     else {
