@@ -32,23 +32,43 @@ if (isset($_GET['reqact'])) {
             }
             break;
         case 'updateloaihang':
+            $file_tmp = $_FILES['fileimage']['tmp_name'];
+            echo $file_tmp;
             echo "fdsfsdf";
-            echo $_FILES['fileimage']['tmp_name'];
 
-            
-            $idloaihang = $_REQUEST['idloaihang'];
-            $tenloaihang = $_REQUEST['tenloaihang'];
-            $tenhinhanh = $_REQUEST['tenhinhanh'];
+
+            $idloaihang = $_POST['idloaihang'];
+            $tenloaihang = $_POST['tenloaihang'];
+            $tenhinhanh = $_POST['tenhinhanh'];
             
 
             // kiểm tra có đổi hình ảnh không
-            if (getimagesize($_FILES['fileimage']['tmp_name']) == false) {
-                $hinhanh = $_REQUEST['hinhanh'];
+            // if (getimagesize($_FILES['fileimage']['tmp_name']) == false) {
+            //     //$hinhanh = $_POST['hinhanh'];
+            //     $hinhanh = $_POST['hinhanh'];
+            // }
+            // else {
+            //     $hinhanh = $_FILES['fileimage']['tmp_name'];
+            //     $hinhanh = base64_encode(file_get_contents(addslashes($hinhanh)));
+            // }
+            
+            if(isset($_FILES['fileimage']['tmp_name']) && !empty($_FILES['fileimage']['tmp_name'])) {
+                $image_size = getimagesize($_FILES['fileimage']['tmp_name']);
+                if ($image_size == FALSE) {
+                    //$hinhanh = $_POST['hinhanh'];
+                    $hinhanh = $_POST['hinhanh'];
+                }
+                else {
+                    $hinhanh = $file_tmp;
+                    $hinhanh = base64_encode(file_get_contents(addslashes($hinhanh)));
+                }
             }
             else {
-                $hinhanh = $_FILES['fileimage']['tmp_name'];
-                $hinhanh = base64_encode(file_get_contents(addslashes($hinhanh)));
+                echo "Ảnh không được tải lên";
             }
+
+
+
 
             $loaihang = new loaihang();
             //$rs = $loaihang->LoaihangUpdate($tenloaihang, $tenhinhanh, $hinhanh, $idloaihang);

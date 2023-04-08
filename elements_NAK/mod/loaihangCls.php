@@ -33,7 +33,7 @@ class loaihang extends database {
     }
 
     public function LoaihangUpdate($tenloaihang, $tenhinhanh, $hinhanh, $idloaihang) {
-        $update = $this->connect->prepare("UPDATE loaihang SET " . "tenloaihang = ?, tenhinhanh = ?, hinhanh = ?" . " WHERE idloaihang = ?");
+        $update = $this->connect->prepare("UPDATE loaihang SET " . " tenloaihang = ?, tenhinhanh = ?, hinhanh = ? " . " WHERE idloaihang = ? ");
 
         $update->execute(array($tenloaihang, $tenhinhanh, $hinhanh, $idloaihang));
 
@@ -41,7 +41,7 @@ class loaihang extends database {
     }
 
     public function LoaihangGetbyId($idloaihang) {
-        $getTk = $this->connect->prepare("select * from loaihang where idloaihang=?");
+        $getTk = $this->connect->prepare("select * from loaihang where idloaihang = ? ");
         $getTk->setFetchMode(PDO::FETCH_OBJ);
         $getTk->execute(array($idloaihang));
 
