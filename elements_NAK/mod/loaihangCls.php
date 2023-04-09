@@ -6,9 +6,9 @@ if (file_exists($r)) {
 else {
     $f = './elements_NAK/mod/database.php';
 }
-require $f;
+require_once $f;
 
-class loaihang extends database {
+class loaihang extends DatabaseConnection {
     public function LoaihangGetAll() {
         $getAll = $this->connect->prepare("select * from loaihang");
         $getAll->setFetchMode(PDO::FETCH_OBJ);

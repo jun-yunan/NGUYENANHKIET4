@@ -23,6 +23,12 @@
             case 'loaihangView':
                 require './elements_NAK/mLoaihang/loaihangView.php';
                 break;
+            case 'hanghoaView':
+                require './elements_NAK/mHanghoa/hanghoaView.php';
+                break;
+            case 'hanghoaUpdate':
+                require './elements_NAK/mHanghoa/hanghoaUpdate.php';
+                break;
         }
     }
     else {

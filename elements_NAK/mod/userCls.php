@@ -6,9 +6,9 @@ if (file_exists($s)) {
 else {
     $f = './elements_NAK/mod/database.php';
 }
-require $f;
+require_once $f;
 
-class userCls extends database {
+class userCls extends DatabaseConnection {
     public function UserAdd($username, $password, $hoten, $gioitinh, $ngaysinh, $diachi, $dienthoai) {
         $add = $this->connect->prepare("INSERT INTO user(username, password, hoten, gioitinh, ngaysinh, diachi, dienthoai) VALUES (?,?,?,?,?,?,?);");
 
